@@ -1,0 +1,27 @@
+#version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec2 texCoords;
+
+out vec2 TexCoords;
+out float MorphRate;
+out vec4 Color;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+uniform float morphRate;
+uniform vec3 offset;
+uniform vec4 color;
+//uniform float posy;
+//uniform float posz;
+
+void main()
+{
+    vec3 temp_pos;
+    temp_pos = position;
+    temp_pos = temp_pos + offset;
+    gl_Position = projection * view * model * vec4(temp_pos, 1.0f);
+    TexCoords = texCoords;
+    MorphRate = morphRate;
+    Color = color;
+}

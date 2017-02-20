@@ -1,0 +1,39 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  Deep Exploration 6.3 x64 6.3.5.8307
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl _1___Default
+Ka 0.588235 0.588235 0.588235
+Kd 1 1 1
+Ks 1 1 1
+illum 2
+Ns 119.428
+map_Kd frog_col1.jpg
+map_bump normalmap.tga
+bump normalmap.tga
+map_opacity 
+map_d 
+refl 
+map_kS Displacement_map.jpg
+map_kA 
+map_Ns 
+
+newmtl _2___Default
+Ka 0.254902 0.254902 0.254902
+Kd 0.254902 0.254902 0.254902
+Ks 0.9 0.9 0.9
+illum 2
+Ns 24.2515
+d 0.43
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 

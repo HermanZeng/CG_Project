@@ -1,0 +1,25 @@
+#version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 normal;
+layout (location = 2) in vec2 texCoords;
+layout (location = 3) in vec3 originPos;
+layout (location = 4) in vec2 originTex;
+
+out vec2 TexCoords;
+out vec2 OriginTex;
+out float MorphRate;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+uniform float morphRate;
+
+void main()
+{
+    vec3 temp_pos;
+    temp_pos = morphRate*position + (1-morphRate)*originPos;
+    gl_Position = projection * view * model * vec4(temp_pos, 1.0f);
+    TexCoords = texCoords;
+    OriginTex = originTex;
+    MorphRate = morphRate;
+}
